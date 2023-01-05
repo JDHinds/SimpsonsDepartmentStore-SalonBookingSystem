@@ -1,0 +1,6 @@
+﻿drop table Bookings
+drop table Appointments
+drop table Customers
+drop table Rooms
+drop table Staff
+drop table Treatments

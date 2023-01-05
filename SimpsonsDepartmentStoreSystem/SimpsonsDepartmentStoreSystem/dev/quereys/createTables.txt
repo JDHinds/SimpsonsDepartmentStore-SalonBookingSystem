@@ -1,0 +1,53 @@
+﻿create table Customers(
+	CustomerID int not null primary key,
+	CustomerTitle nvarchar (50) null,
+	CustomerForename nvarchar (50) null,
+	CustomerSurname nvarchar (50) null,
+	CustomerAddressLine1 nvarchar (50) null,
+	CustomerAddressLine2 nvarchar (50) null,
+	CustomerAddressCounty nvarchar (50) null,
+	CustomerAddressPostcode nvarchar (50) null,
+	CustomerEmail nvarchar (50) null,
+	CustomerPhoneNumber nvarchar (11) null,
+	CustomerDateOfBirth date null,
+	CustomerSurvey bit null,
+	CustomerArchived bit null
+	)
+
+create table Staff(
+	StaffID int not null primary key,
+	StaffTitle nvarchar (50) null,
+	StaffForename nvarchar (50) null,
+	StaffSurname nvarchar (50) null,
+	StaffTimes int null,
+	);
+create table Rooms(
+	RoomNumber int not null primary key,
+	NailBar bit null
+	)
+
+create table Treatments(
+	TreatmentID int not null primary key,
+	TreatmentName nvarchar (50) null,
+	TreatmentDuration int null,
+	TreatmentCost int null
+	)
+
+create table Appointments(
+	AppointmentID int not null primary key,
+	CustomerID int null,
+	StaffID int null,
+	RoomNumber int null,
+	AppointmentTime smalldatetime null,
+	foreign key (CustomerID) references Customers(CustomerID),
+	foreign key (StaffID) references Staff(StaffID),
+	foreign key (RoomNumber) references Rooms(RoomNumber)
+	)
+
+create table Bookings(
+	AppointmentID int not null,
+	TreatmentID int not null
+	foreign key (AppointmentID) references Appointments(AppointmentID),
+	foreign key (TreatmentID) references Treatments(TreatmentID),
+	primary key (AppointmentID, TreatmentID)
+	)

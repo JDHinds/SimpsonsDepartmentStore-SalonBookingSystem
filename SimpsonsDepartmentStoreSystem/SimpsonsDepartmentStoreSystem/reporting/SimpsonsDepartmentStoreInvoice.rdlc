@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="tbxAppointments">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="txtTitleAppointmentDate">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Appointment Date</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>Silver</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.84396cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.65094cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.02916cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>1.15563cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtRoomNumber">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!RoomNumber.Value</Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value xml:space="preserve"> </Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=IIF(Fields!NailBar.Value = 1, "(Nail Bar)", "")</Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtStaff">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!StaffTitle.Value</Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value xml:space="preserve"> </Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!StaffForename.Value</Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value xml:space="preserve"> </Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!StaffSurname.Value</Value>
+                              <Style>
+                                <FontFamily>Microsoft Sans Serif</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="tbxTreatments">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>3.02916cm</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>1.15563cm</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="txtTreatments">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!TreatmentName.Value</Value>
+                                            <Style>
+                                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                                              <FontSize>12pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <Style>
+                                      <Border>
+                                        <Color>Silver</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="Details1" />
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <DataSetName>DataSet</DataSetName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Tablix>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="tbxTreatmentDuation">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>2.5cm</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>1.15563cm</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="txtTreatmentDuation">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!TreatmentDuration.Value</Value>
+                                            <Style>
+                                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                                              <FontSize>12pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                          <TextRun>
+                                            <Value> minutes</Value>
+                                            <Style>
+                                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                                              <FontSize>12pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <Style>
+                                      <Border>
+                                        <Color>Silver</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="Details" />
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <DataSetName>DataSet</DataSetName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Tablix>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="tbxTreatmentCost">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>2.5cm</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>1.15563cm</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="txtTreatmentCost">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>£</Value>
+                                            <Style>
+                                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                                              <FontSize>12pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                          <TextRun>
+                                            <Value>=Fields!TreatmentCost.Value/100</Value>
+                                            <Style>
+                                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                                              <FontSize>12pt</FontSize>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <Style>
+                                      <Border>
+                                        <Color>Silver</Color>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="Details2" />
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <DataSetName>DataSet</DataSetName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Tablix>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <TablixHeader>
+                <Size>1.15563cm</Size>
+                <CellContents>
+                  <Textbox Name="txtTitleRoomNumber">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Room Number</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>Silver</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="ColumnGroup">
+                <GroupExpressions>
+                  <GroupExpression />
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>1.15563cm</Size>
+                <CellContents>
+                  <Textbox Name="txtTitleStaff">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Staff</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>Silver</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>1.15563cm</Size>
+                <CellContents>
+                  <Textbox Name="txtTitleTreatments">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Treatments</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>Silver</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>1.15563cm</Size>
+                <CellContents>
+                  <Textbox Name="txtTitleTreatmentDuation">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Treatment Duration</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>Silver</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>1.15563cm</Size>
+                <CellContents>
+                  <Textbox Name="txtTitleTreatmentCost">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Treatment Cost</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>Silver</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="AppointmentTime">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!AppointmentTime.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!AppointmentTime.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>6.00573cm</Size>
+                <CellContents>
+                  <Textbox Name="txtAppointmentDate">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Format(Fields!AppointmentTime.Value, "dd MMM yyyy HH:mm")</Value>
+                            <Style>
+                              <FontFamily>Microsoft Sans Serif</FontFamily>
+                              <FontSize>12pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet</DataSetName>
+        <Top>6.69398cm</Top>
+        <Left>0.44771cm</Left>
+        <Height>2.31126cm</Height>
+        <Width>20.52979cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="txtNameAddress">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerTitle.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerForename.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerSurname.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerAddressLine1.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerAddressLine2.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerAddressCounty.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=REPLACE(Fields!CustomerAddressPostcode.Value, "|", "'")</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.45099cm</Top>
+        <Left>0.44769cm</Left>
+        <Height>3.9255cm</Height>
+        <Width>9.76946cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="txtContactInfo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Email: </Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!CustomerEmail.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Mobile: </Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!CustomerPhoneNumber.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.41572cm</Top>
+        <Left>10.44329cm</Left>
+        <Height>1.68479cm</Height>
+        <Width>10.53421cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="line1">
+        <Top>2.34516cm</Top>
+        <Left>0.44769cm</Left>
+        <Height>0cm</Height>
+        <Width>20.5298cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="line2">
+        <Top>6.5176cm</Top>
+        <Left>0.49745cm</Left>
+        <Height>0cm</Height>
+        <Width>20.48005cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="txtTotalCost">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Total Cost: £</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Sum(Fields!TreatmentCost.Value, "DataSet")/100</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>9.28746cm</Top>
+        <Left>14.43782cm</Left>
+        <Height>1.15562cm</Height>
+        <Width>6.63917cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="txtDate">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIF(Format(Min(Fields!AppointmentTime.Value, "DataSet"), "dd MMM yyyy") = Format(Max(Fields!AppointmentTime.Value, "DataSet"), "dd MMM yyyy"), Format(Min(Fields!AppointmentTime.Value, "DataSet"), "dd MMM yyyy"), "From " + Format(Min(Fields!AppointmentTime.Value, "DataSet"), "dd MMM yyyy") + " to " + Format(Max(Fields!AppointmentTime.Value, "DataSet"), "dd MMM yyyy"))</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.18955cm</Top>
+        <Left>5.32136cm</Left>
+        <Height>1.0145cm</Height>
+        <Width>14.03713cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="imgLogo">
+        <Source>Embedded</Source>
+        <Value>logo</Value>
+        <Sizing>FitProportional</Sizing>
+        <Left>0.44769cm</Left>
+        <Height>2.30987cm</Height>
+        <Width>4.73256cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Line Name="line3">
+        <Top>9.18163cm</Top>
+        <Left>0.44771cm</Left>
+        <Height>0cm</Height>
+        <Width>20.48005cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="txtID">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Customer ID: </Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!CustomerID.Value</Value>
+                <Style>
+                  <FontFamily>Microsoft Sans Serif</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>5.44135cm</Top>
+        <Left>12.8986cm</Left>
+        <Height>0.97042cm</Height>
+        <Width>8.02916cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>4.11145in</Height>
+    <Style />
+  </Body>
+  <Width>8.29803in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="SimpsonsDepartmentStoreDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>8017a284-dc03-4fbf-8686-1c27f72043d9</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet">
+      <Query>
+        <DataSourceName>SimpsonsDepartmentStoreDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CustomerTitle">
+          <DataField>CustomerTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerForename">
+          <DataField>CustomerForename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerSurname">
+          <DataField>CustomerSurname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerAddressLine1">
+          <DataField>CustomerAddressLine1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerAddressLine2">
+          <DataField>CustomerAddressLine2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerAddressCounty">
+          <DataField>CustomerAddressCounty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerAddressPostcode">
+          <DataField>CustomerAddressPostcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerEmail">
+          <DataField>CustomerEmail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerPhoneNumber">
+          <DataField>CustomerPhoneNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppointmentTime">
+          <DataField>AppointmentTime</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="RoomNumber">
+          <DataField>RoomNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NailBar">
+          <DataField>NailBar</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="StaffTitle">
+          <DataField>StaffTitle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StaffForename">
+          <DataField>StaffForename</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StaffSurname">
+          <DataField>StaffSurname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TreatmentName">
+          <DataField>TreatmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TreatmentDuration">
+          <DataField>TreatmentDuration</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TreatmentCost">
+          <DataField>TreatmentCost</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CustomerID">
+          <DataField>CustomerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AppointmentID">
+          <DataField>AppointmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TreatmentID">
+          <DataField>TreatmentID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>SimpsonsDepartmentStoreDataSet</rd:DataSetName>
+        <rd:SchemaPath>D:\Lagan\Year 13\SSD\SQL\Coursework\System\22.03.11\SimpsonsDepartmentStoreSystem\SimpsonsDepartmentStoreSystem\reporting\SimpsonsDepartmentStoreDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>SimpsonsDepartmentStoreDataTable</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SimpsonsDepartmentStoreDataTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>699b3b0c-dd30-4211-b628-e6185cd523ce</rd:ReportID>
+</Report>
